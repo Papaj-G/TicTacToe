@@ -1,0 +1,21 @@
+{
+	"name": "tictactoe",
+	"version": "0.0.0",
+	"description": "A game of Tic Tac Toe",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest",
+		"start": "node tictactoe.js",
+		"deploy": "parcel website.html"
+	},
+	"author": "Patryk Busler",
+	"license": "ISC",
+	"dependencies": {
+		"git": "^0.1.5",
+		"jest": "^27.4.7",
+		"node": "^17.4.0",
+		"parcel": "^2.2.1",
+		"readline-sync": "^1.4.10"
+	},
+	"type": "module"
+}
