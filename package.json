@@ -9,6 +9,10 @@
 		"deploy": "parcel website.html"
 	},
 	"author": "Patryk Busler",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Papaj-G/TicTacToe.git"
+	},
 	"license": "ISC",
 	"dependencies": {
 		"git": "^0.1.5",
