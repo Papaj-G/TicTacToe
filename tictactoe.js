@@ -13,13 +13,33 @@ var board = [
 //listeners for all buttons
 board.forEach((array, row) => {
 	array.forEach((tile, col) => {
-		tile.addEventListener("click", () => takeTurn(row, col));
+		tile.addEventListener("click", () => {
+			takeTurn(row, col);
+			takeTurnAI();
+		});
 	});
 });
 resetButton.addEventListener("click", resetGame);
 /////////////////////////////////
 
-function takeTurn(row, col) {
+async function play() {}
+
+function takeTurnAI() {
+	if (gameEnded) {
+		return;
+	}
+	do {
+		var randomRow = getRandomInt(3);
+		var randomCol = getRandomInt(3);
+		console.log(randomRow, randomCol);
+	} while (!isAnEmptySpot(randomRow, randomCol));
+	takeTurn(randomRow, randomCol);
+}
+function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+}
+
+async function takeTurn(row, col) {
 	if (gameEnded) {
 		return;
 	}
@@ -58,8 +78,8 @@ function resetGame() {
 	annoucements.innerText = "";
 }
 function boardIsFull() {
-	for (row = 0; row < 3; row++) {
-		for (col = 0; col < 3; col++) {
+	for (let row = 0; row < 3; row++) {
+		for (let col = 0; col < 3; col++) {
 			if (board[row][col].innerText == "") {
 				return false;
 			}
